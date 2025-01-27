@@ -12,3 +12,6 @@ spec:
     - "1000"
     image: busybox
     name: static-busybox
+
+
+# Information for static file information is found at location /var/lib/kubelet/config.yml
