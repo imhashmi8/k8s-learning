@@ -1,0 +1,25 @@
+kubectl create -f deployment-definition yml
+
+1. To list deployments  
+
+    kubectl get deployments
+
+2. To apply the manifest files
+
+    kubectl apply -f deployment-definition.yml
+
+3. To set new image in deployment
+
+    kubecti set image deployment/myapp-deployment nginx=nginx:1.9.1
+
+4. To check the status of the deployment
+
+    kubectl rollout status deployment/myapp-deployment
+
+5. To check the history of the deployment
+
+    kubectl rollout history deployment/myapp-deployment
+
+6. To undo the changes in the deployment
+
+    kubectl rollout undo deployment/myapp-deployment
