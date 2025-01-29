@@ -1,0 +1,40 @@
+1. Update the repository package to "pkgs.k8s.io"
+
+Reference:- https://v1-31.docs.kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
+
+Replace the apt repository definition so that apt points to the new repository instead of the Google-hosted repository. Make sure to replace the Kubernetes minor version in the command below with the minor version that you're currently using:
+
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+Download the public signing key for the Kubernetes package repositories. The same signing key is used for all repositories, so you can disregard the version in the URL:
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+Update: In releases older than Debian 12 and Ubuntu 22.04, the folder /etc/apt/keyrings does not exist by default, and it should be created before the curl command.
+
+Update the apt package index:
+
+sudo apt-get update
+
+
+
+Find the latest patch release for Kubernetes 1.31 using the OS package manager:
+
+sudo apt update
+sudo apt-cache madison kubeadm
+
+Upgrade kubeadm:
+
+sudo apt-mark unhold kubeadm && sudo apt-get update && sudo apt-get install -y kubeadm='1.31.0-1.1' && sudo apt-mark hold kubeadm
+sudo kubeadm upgrade plan
+kubeadm upgrade apply v1.31.0
+
+Verify that the download works and has the expected version:
+
+kubeadm version
+
+kubectl drain controlplane --ignore-daemonsets
+
+sudo apt-mark unhold kubelet kubectl && sudo apt-get update && sudo apt-get install -y kubelet='1.31.0-1.1' kubectl='1.31.0-1.1' && sudo apt-mark hold kubelet kubectl
+
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
