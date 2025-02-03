@@ -1,0 +1,31 @@
+1. What is the network interface configured for cluster connectivity on the controlplane node?
+
+=> kubectl get nodes controlplane -o wide
+NAME           STATUS   ROLES           AGE     VERSION   INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION    CONTAINER-RUNTIME
+controlplane   Ready    control-plane   4m59s   v1.31.0   192.168.231.135   <none>        Ubuntu 22.04.5 LTS   5.15.0-1071-gcp   containerd://1.6.26
+
+=> ip a | grep -B2 "192.168.231.135"
+eth0@if52004: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default 
+    link/ether aa:4f:c1:f5:7f:e9 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.231.135/32 scope global eth0
+
+2. What is the MAC address of the interface on the controlplane node? (Can find the detail from the above output)
+
+=> ip a | grep -B2 "192.168.231.135"
+eth0@if52004: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1410 qdisc noqueue state UP group default 
+    link/ether aa:4f:c1:f5:7f:e9 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 192.168.231.135/32 scope global eth0
+
+Mac Address = aa:4f:c1:f5:7f:e9
+
+3. We use Containerd as our container runtime. What is the interface/bridge created by Containerd on the controlplane node?
+
+=> ip address show type bridge
+
+4. If you were to ping google from the controlplane node, which route does it take? What is the IP address of the Default Gateway?
+
+=> ip route
+
+5. Notice that ETCD is listening on two ports. Which of these have more client connections established?
+
+=> netstat -apn | grep "etcd"
