@@ -1,0 +1,14 @@
+Helm Best Practices
+
+
+1. Use "values.yaml" to manage configurable parameters instead of hardcoding.
+
+2. Keep charts modular and reusable to simplify maintenance.
+
+3. Validate charts using helm lint before deploying.
+
+4. Store charts in a Helm repository for better version control and sharing.
+
+5. Use helm dependency update to manage chart dependencies.
+
+6. Implement RBAC and security best practices when deploying Helm charts.

@@ -1,0 +1,18 @@
+Helm Commands Overview
+
+
+1. "helm repo add <repo>" – Add a chart repository.
+
+2. "helm repo update" – Update the repository index.
+
+3. "helm search repo <chart>" – Search for a chart in a repository.
+
+4. "helm install <release> <chart>" – Deploy a Helm chart.
+
+5. "helm list" – List all installed releases.
+
+6. "helm upgrade <release> <chart>" – Upgrade an existing Helm release.
+
+7. "helm rollback <release> <revision>" – Rollback to a previous chart version.
+
+8. "helm uninstall <release>" – Remove a Helm release.

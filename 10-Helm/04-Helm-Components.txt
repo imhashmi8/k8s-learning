@@ -1,0 +1,10 @@
+Helm Components
+
+1. Chart.yaml: Defines metadata like name, version, and description of the chart.
+
+2. values.yaml: Stores customizable configuration parameters for the chart.
+
+3. Templates/: Contains Kubernetes resource files with templating capabilities.
+
+4. Charts/: Directory for managing chart dependencies.
+

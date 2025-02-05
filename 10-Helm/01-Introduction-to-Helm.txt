@@ -1,0 +1,9 @@
+Introduction to Helm
+
+1. Helm is a powerful package manager designed for Kubernetes applications.
+
+2. It simplifies the deployment, upgrade, and rollback of applications.
+
+3. Helm Charts bundle Kubernetes resources into reusable and configurable packages.
+
+4. Helps manage Kubernetes configurations using templates.

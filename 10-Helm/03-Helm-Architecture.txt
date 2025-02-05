@@ -1,0 +1,14 @@
+Helm Architecture
+
+1. Helm Client: Command-line interface (CLI) to interact with Helm.
+
+2. Helm Chart: A packaged Kubernetes application that includes all necessary resources.
+
+3. Helm Repository: Central storage for Helm Charts, enabling easy distribution.
+
+4. Tiller (Helm v2): Deprecated server-side component that managed releases.
+
+5. Release: A specific deployment instance of a Helm Chart.
+
+6. Helm v3: Removed Tiller, making Helm more secure and client-based.
+

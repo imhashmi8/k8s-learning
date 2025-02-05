@@ -1,0 +1,13 @@
+Creating a Helm Chart
+
+1. Run "helm create mychart" to generate a basic Helm chart structure.
+
+2. Modify "values.yaml" to customize application configurations.
+
+3. Edit template files under "templates/" to define Kubernetes resource manifests.
+
+4. Package the chart using "helm package mychart".
+
+5. Deploy the chart using "helm install myrelease ./mychart".
+
+5. Verify deployment with "helm list" and "kubectl get all".

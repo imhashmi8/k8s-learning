@@ -1,0 +1,12 @@
+Why Use Helm?
+
+
+1. Automation: Streamlines complex deployments with predefined templates.
+
+2. Version Control: Tracks and manages application versions effectively.
+
+3. Dependency Management: Handles dependencies between different services.
+
+4. Standardization: Ensures consistency across different environments.
+
+5. Scalability: Easily scale applications by modifying configuration values.

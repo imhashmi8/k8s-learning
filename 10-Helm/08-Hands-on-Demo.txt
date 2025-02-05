@@ -1,0 +1,15 @@
+Hands-on Demo (Optional)
+
+
+1. Install Helm (brew install helm or curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash).
+
+2. Deploy an Nginx chart "helm install mynginx bitnami/nginx".
+
+3. Modify "values.yaml" to customize Nginx configurations.
+
+4. Upgrade the release "helm upgrade mynginx bitnami/nginx".
+
+5. Demonstrate rollback "helm rollback mynginx 1".
+
+6. Show how to uninstall "helm uninstall mynginx".
+
