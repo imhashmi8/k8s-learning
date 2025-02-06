@@ -12,3 +12,43 @@ resources:
   - nginx/nginx-depl.yaml
   - nginx/nginx-service.yaml
 
+
+
+# Common Transformers
+
+# Labes
+commonLables: 
+  org: my-test-deployment
+
+# Namepaces
+namespace: dev-ns
+
+# Name Prefix
+namePrefix: qamar
+
+# Name Subfix
+nameSuffix: -dev
+
+# Annotations
+commonAnnotations:
+  branch: master
+
+# Change Image
+
+images:
+  - name: nginx
+    newName: haproxy
+
+# # Change Image Tag
+
+# images:
+#   - name: nginx
+#     newTag: 2.4
+
+# # Change Image name and Tag
+
+
+# images:
+#   - name: nginx
+#     newName: haproxy
+#     newTag: 2.4
