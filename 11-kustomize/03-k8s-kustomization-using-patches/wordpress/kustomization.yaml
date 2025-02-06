@@ -1,0 +1,5 @@
+resources:
+- wordpress
+- mysql
+patches:
+- path: patch.yaml
